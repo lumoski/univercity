@@ -1,0 +1,102 @@
+\documentclass[
+	openany,
+	10pt,
+	parindent=0
+] {article}
+
+\usepackage[a5paper,top=2cm,bottom=2cm,left=1.5cm,right=1.5cm]{geometry}
+
+\usepackage{import}
+\usepackage[T2A]{fontenc}
+\usepackage[english,russian]{babel}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\usepackage{braket}
+\usepackage{blkarray}
+\usepackage{graphics}
+\usepackage{subcaption}
+
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{parskip}
+\usepackage{setspace}
+
+\setstretch{1}
+\setlength{\parindent}{0pt}
+
+\usepackage{tikz}
+	\usetikzlibrary{arrows.meta}
+	\usetikzlibrary{graphs, graphs.standard}
+
+\tikzset{
+	node distance={12mm}, minimum size={5mm}, inner sep={0mm}, main/.style = {draw, circle}
+}
+
+\titleformat{\section}[block]{\normalfont\bfseries\normalsize}{\thesection}{0.3em}{}
+\titlespacing*{\section}{0em}{0pt}{10pt}
+
+\newtheoremstyle{custom} % Имя стиля
+  {3pt}      % Отступ сверху
+  {3pt}      % Отступ снизу
+  {\normalsize} % Шрифт для тела теоремы
+  {}         % Величина отступа
+  {\bfseries}% Шрифт заголовка теоремы
+  {}         % Знак препинания после заголовка теоремы
+  { }        % Пробел после заголовка теоремы
+  {\thmname{#1}\thmnote{ \bfseries#3}} % Спецификация заголовка теоремы
+
+\theoremstyle{custom}
+\newtheorem{theorem}{Теорема:}[section]
+\newtheorem{definition}{Опр:}[section]
+\makeatletter
+\renewenvironment{proof}[1][\proofname]{\par
+  \pushQED{\qed}%
+  \normalfont \topsep6\p@\@plus6\p@\relax
+  \trivlist
+  \item[\hskip\labelsep
+        \bfseries
+    Док-во:\@addpunct{}]%
+    \ignorespaces
+}{%
+  \popQED\endtrivlist\@endpefalse
+}
+\makeatother
+
+
+\newcommand*{\titleASU}{\begingroup
+	\begin{center}
+        \large
+		Санкт-Петербургский государственный электротехнический университет
+		имени В. И. Ленина "ЛЭТИ"
+		\vfill
+		билеты \\ 
+		\huge{\textbf{КОМБИНАТОРИКА И ТЕОРИЯ ГРАФОВ}} \\
+        \vspace*{200pt}
+        \large
+        Студент: \hfill Придчин В.Е.\\
+        Группа: \hfill 2308 \\
+        Лектор: \hfill Зяблицева Л.
+		\vfill
+		Санкт-Петербург \\ 2024
+		\newpage
+	\end{center}
+\endgroup}
+
+\begin{document}
+    \begin{titlepage}
+        \titleASU
+    \end{titlepage}
+
+    \setcounter{page}{2}
+
+    \include{ticket_1}
+	\include{ticket_2}
+	\include{ticket_3}
+	\include{ticket_4}
+	\include{ticket_5}
+
+\end{document}
