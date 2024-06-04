@@ -1,0 +1,72 @@
+\section{Разбиение множества. Доказать теорему о связи фактор-множества множества по отношению 
+эквивалентности и разбиением множества.}
+
+\begin{definition}
+    \textit{Разбиением множества $A$} называется такое семейство его
+    непустых подмножеств, что их объединение совпадает с множеством $A$, а
+    пересечение двух различных подмножеств является пустым множеством.
+\end{definition}
+
+Пример: \\
+$A = \set{1,2,3,4,5}$, Множество подмножеств множества $A$ \\
+$\set{\set{1,2,3},\set{2,3},\set{4,5}}$ не является разбиением множества $A$, так как элементы
+2,3 принадлежат одновременно двум подмножествам.
+Множество подмножеств множества $A$ $\set{\set{1},\set{2,3},\set{4,5}}$ является разбиением
+множества $A$ по определению.
+
+\begin{theorem}
+    Пусть $R$ - отношение эквивалентности на множестве $A$. Фактор
+    множество множества $A$ по $R$ задает разбиение этого множества.
+    (подмножествами разбиения являются классы эквивалентности).
+    \begin{align*}
+        A/R=\set{\overline{a} | a \in A}
+    \end{align*}
+\end{theorem}
+
+\begin{proof}
+    Докажем, что классы эквивалентности по отношению $R$ являются
+    подмножествами разбиения множества.
+    \begin{enumerate}[left=0.0em, labelsep=1em, topsep=0.0em, itemsep=0pt, parsep=0.5em]
+        \item Докажем, что каждый класс эквивалентности не является пустым:
+        \begin{align*}
+            \overline{a} &= \set{x \in A | xRa} \\
+            R &- \text{рефлексивно} \Rightarrow aRa \Rightarrow a \in \overline{a}
+        \end{align*}
+        \item Докажем: если элемент $c \in \overline{a}$ и $c \in \overline{b}$,
+        то эти классы совпадают: $\overline{a}=\overline{b}$.\\
+        Это означает, что различные классы не пересекаются
+        \\ $c \in \overline{a} \Rightarrow cRa = aRc$ \\
+        $c \in \overline{b} \Rightarrow cRb = bRc$ \\
+        $aRb \Rightarrow bRa$ \\
+        Это означает, что если какой-то элемент принадлежит двум классам
+        эквивалентности, то элементы, порождающие эти классы, находятся в этом
+        отношении.
+    \end{enumerate}
+    \newpage
+    Докажем теперь, что $\overline{a}=\overline{b}$. Для этого докажем два включения.
+    \begin{enumerate}[left=0.0em, labelsep=1em, topsep=0.0em, itemsep=0pt, parsep=0.5em]
+        \item $\overline{a} \subset \overline{b}$ \\
+        Докажем: $(\forall x)(x \in \overline{a} \Rightarrow x \in \overline{b})$
+        \begin{align*}
+            x \in \overline{a} \Rightarrow xRa \wedge aRb \Rightarrow xRb \Rightarrow x \in \overline{b}
+        \end{align*}
+        \item $\overline{b} \subset \overline{a}$ \\
+        Докажем: $(\forall x)(x \in \overline{b} \Rightarrow x \in \overline{a})$
+        \begin{align*}
+            x \in \overline{b} \Rightarrow xRb \wedge bRa \Rightarrow xRa \Rightarrow x \in \overline{a}
+        \end{align*}
+    \end{enumerate}
+    Докажем, что $\cup \overline{a} = A$. Так как $(\forall a \in A) a \in \overline{a}$,
+    то $A \subset \cup \overline{a}$, \\ любой класс эквивалентности по определению является подмножеством
+    множества $A$, поэтому и объединение классов является подмножеством $A$.
+    По определению получили, что фактор множество является разбиением
+    множества $a$.
+\end{proof}
+
+Из этой теоремы следует следующее:
+\begin{enumerate}[left=0.0em, labelsep=1em, topsep=0.0em, itemsep=0pt, parsep=0.5em]
+    \item $(\forall a \in A) a \in \overline{a}$
+    \item $(\forall a,b \in A) (a \in \overline{b} \Leftrightarrow \overline{a} = \overline{b})$
+    \item $(\forall a,b \in A) (a \notin \overline{b} \Leftrightarrow \overline{a} \cap \overline{b} = \varnothing)$
+    \item $(\forall a \in A) \cup \overline{a} = A$.
+\end{enumerate}
